@@ -1,0 +1,127 @@
+                              Title:
+                             --------
+                        Project:Flight Ticket Booking:
+(Welcome To Foresight Airlines)
+----------------------------------------------------------------------------------------------------------------
+STEP 1:
+LOGIN :
+-------
+1.UserName/MailId:Saju/saju@gmail.com
+2.Password:**********
+(If existing user then directly it reaches to STEP:5)
+      (Or)
+New Registration:(STEP2)
+
+----------------------------------------------------------------------------------------------------------------
+Step2:
+(New Registration):
+---------------------
+1.FirstName*:Saju Hemanth                        
+2.LastName*:B
+3.Age*:21
+4.Gender*:M
+#5.DOB*:20/12/2000
+#6.Nationality*:Indian
+7.ID Proof:(Choose any of the following*):Aadhar
+8.Id Number*:4175 7878 9087
+9.Email Id*:sajuh@gmail.com
+10.Mobile Number*:6379070287
+-----------------------------------------------------------------------------------------------------------------
+STEP3:
+Options:
+--------
+Please choose the MENU:
+1.Book tickets
+2.View Booking tickets.
+3.Cancellation.
+4.View Bookings
+5.User manual
+6.Exit
+-----------------------------------------------------------------------------------------------------------------
+STEP4:
+User manual:
+------------
+{Text document}
+(Here The upcoming Steps will be given in step by step to understand the procedure for booking)
+------------------------------------------------------------------------------------------------------------------
+STEP5:
+Availability chart:
+-------------------
+(Totally 3-locations):
+1.Chennai->Coimbatore.
+2.Coimbatore->Delhi.
+3.Bangalore->chennai.
+
+Availability flights from: (DEPARTURE:chennai)- (ARRIVAL:CBE) on (Date:01/07/2022):
+Availability return flights from :(DEPATURE:CBE) - (ARRIVAL:Chennai) on (Date:selected date)
+
+
+------------------------------------------------------------------------------------------------------------------
+STEP6:
+Booking Page:
+--------------
+1.Select Departure Flight:
+(Option To be selected using availability chart)
+
+2.Select Return FDetails for both depature and return flights:
+---------------------------------------------
+Option:A                  Option:B                 Option:C
+---------                 ---------                ---------
+Flight name:Indigo     |  Flight name:AirIndia    | Flight name:AirIndia
+From:Chennai           |  From:chennai            | From:chennai
+To:Coimbatore          |  To:Coimbatore           | To:Coimbatore 
+Depature:9.00          |  Departure:9.20          | Departure:12.45
+Arrival:10.00          |  Arrival:10.28           | Arrival:2.00
+Available seats:45     |  Available seats:25      | Available seats:22
+Fare:5500              |  Fare:5890               | Fare:6200
+(*seats availability to be updated)
+
+(OPTION:A/B/C)
+(Based on option -displays in booking page)light:
+(Option To be selected using availability chart)
+
+3.Submit
+
+4.Cancel Ticket
+-------------------------------------------------------------------------------------------------------------------
+STEP7:
+View Details:
+--------------
+FullName:Saju Hemanth B
+Id number:4987 7878 9870
+Gender:M
+Nationality:Indian
+Route:Chennai->Coimbatore(Air India)
+Travelling on date:01/07/2022
+Flight Departure at 12.45
+Flight Arrival at 2.00
+Total fare:6200
+--------------------------------------------------------------------------------------------------------------------
+STEP8:
+1.Cancellation:
+---------------
+  Id number:4175 8787 9090
+  Reason:(options):
+       (3 options)
+
+2.History of Bookings:
+----------------------
+   If the user already has an previous records /No History of bookings.
+--------------------------------------------------------------------------------------------------------------------
+STEP9:
+EXIT page:(Thankyou Message After Booking)
+----------
+Thanks for reserving your flight ticket with us:)
+We Wish you a pleasant flight with us:)
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+SELECT users.FirstName , users.LastName , flight.Boarding FROM test.testtable tab JOIN test.UserDetails users ON users.UserId = tab.user_id JOIN test.availability_chart flight ON flight.FlightId = tab.flight_id;
+
+
+Query::
+SELECT users.UserId, users.FirstName , users.LastName , flight.FlightId, flight.Boarding , flight.Destination , flight.DepatureTime , flight.Arrivaltime ,flight.Fare, tab.booked_seats , flight.Fare*tab.booked_seats AS total_fare FROM test.testtable tab JOIN test.UserDetails users  ON users.UserId = tab.user_id JOIN test.availability_chart flight ON flight.FlightId = tab.flight_id;
